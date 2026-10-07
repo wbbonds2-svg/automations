@@ -1,0 +1,50 @@
+I'll put the new site in its own folder. The repo's root `index.html` is the live DMS client site, so I'm leaving it alone.
+
+Let me simplify the step-animation loop before testing.
+
+Now I'll test it in a browser: desktop, mobile, dark mode, and form submission with the network mocked.
+
+Desktop and dark mode look right. The empty areas in the mobile full-page shot are sections that fade in on scroll and hadn't come into view yet. I'll force them visible and re-check the full page.
+
+Everything renders cleanly. Committing and pushing.
+
+I built the landing page with its waitlist, and named the company **Loopwright**. The commit is saved on `claude/great-gates-20jww2` but **not pushed**: GitHub refused the push with a 403 because Claude doesn't have access to this repository. To fix it, reconnect GitHub at https://claude.ai/connect-github, and install the Claude GitHub App on the repo if it isn't already there. Then tell me and I'll push.
+
+**The name:** a "wright" is a maker and a "loop" is an automation that runs on its own, so Loopwright means "we build your loops." The tagline is *"Your busywork, on autopilot."* I haven't checked whether loopwright.ai or the trademark is available, and the page uses hello@loopwright.ai as a placeholder address, so check both before you buy anything.
+
+**The pitch:** you build and run AI automations for small teams, so they don't need engineers or new tools. Examples on the page include lead intake, invoices, support, reports and scheduling. The process is shown as Map → Build → Run, live in about two weeks, with ongoing monitoring.
+
+**The page** is at `loopwright/index.html`, a single self-contained file. I left the DMS site at the repo root untouched. It has:
+- A hero with an animated "automation running" card
+- What you automate, how it works, founding-member perks and an FAQ
+- A closing sign-up section
+- Light and dark modes, and a mobile layout with no sideways scrolling
+
+**The waitlist** has two forms. The top one asks for email, then shows optional fields for name, company, team size, industry and "what would you automate first?" Each signup also records which form it came from and a timestamp, and there's a hidden field to catch spam bots.
+
+It isn't collecting signups yet. To connect it:
+1. Create a free form at formspree.io.
+2. Paste its ID into `WAITLIST_ENDPOINT` near the bottom of the file, replacing `YOUR_FORM_ID`.
+
+After that, each signup arrives in your Formspree inbox and can be exported to CSV. I didn't reuse the DMS site's Formspree form because it belongs to that client. Until you connect it, the form shows a "not connected yet" message rather than pretending the signup worked.
+
+I tested it in a browser at desktop and phone sizes, in both light and dark mode. With the network mocked, a signup sends the right fields and shows the success message. There were no console errors.
+
+The page promises founding perks: 30% off for life, the first automation free, and a free audit. It also quotes hours saved per week. Change any of those you don't actually want to commit to.
+
+I can also publish a preview link you can share before it goes live on your domain.
+
+The git push failed again with the same 403. I'll try sending the commit through the GitHub connector, which uses a separate login.
+
+The connector can read the repo. I'll create the branch, then push the file through it.
+
+The page is still **not on GitHub**. I tried pushing with git and through the GitHub connector, and both were refused with a 403. Claude can read `wbbonds2-svg/nextframemedia` but doesn't have permission to write to it.
+
+The commit is saved locally on `claude/great-gates-20jww2`. To get it pushed:
+
+1. Reconnect GitHub at https://claude.ai/connect-github. If the Claude GitHub App isn't installed on the repo, install it from the same page and give it write access to `nextframemedia`. If someone else owns the GitHub account or organization, they'll need to do this.
+2. Then tell me, and I'll push the branch.
+
+If you'd rather not change permissions, I can send you `loopwright/index.html` here and you can upload it yourself in GitHub's web interface.
+
+The container is deleted after a while of inactivity, so do one of these soon or the unpushed commit will be lost.
